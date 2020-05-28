@@ -1,0 +1,19 @@
+server:
+  port: 3377
+
+spring:
+  application:
+    name: nacos-config-client
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.2.105:8848 #服务注册中心地址
+      config:
+        server-addr: 192.168.2.105:8848 #配置中心地址
+        file-extension: yaml #指定yaml格式的配置
+        group: TEST_GROUP
+        namespace: 8f7b88bf-be1b-4a57-a475-1b319ccacadb
+
+#     ${prefix}-${spring.profile.active}.${file-extension}   nacoa中dataID的格式。
+#     ${prefix}   =   spring.application.name
+#      nacos-config-client-dev.yaml
